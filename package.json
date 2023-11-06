@@ -1,0 +1,12 @@
+{
+  "name": "simple-event-system",
+  "version": "1.0.0",
+  "description": "A simple yet effective event system to avoid reinventing the wheel every time",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "author": "Andrea Dragotta",
+  "license": "ISC"
+}
