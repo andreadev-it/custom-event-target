@@ -24,7 +24,7 @@ export class CustomEventTarget {
 
         let index = listeners.findIndex((x: Listener) => x === listener);
         if (index >= 0) {
-            listeners = listeners.splice(index, 1);
+            listeners.splice(index, 1);
         }
 
         this.listeners.set(event, listeners);
