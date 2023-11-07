@@ -112,8 +112,7 @@ describe("CustomEventTarget should", () => {
         let target = new CustomEventTarget();
         let count = 0;
 
-        target.addListener("load", async () => {
-            await waitFor(100);
+        target.addListener("load", () => {
             count++; 
         });
 
@@ -130,5 +129,6 @@ describe("CustomEventTarget should", () => {
         target.fireEventSync("load", {});
 
         assert.notEqual(count, 3);
+        assert.equal(count, 1);
     });
 });
