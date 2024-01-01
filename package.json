@@ -1,6 +1,6 @@
 {
   "name": "@andreadev/custom-event-target",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple yet effective event system to avoid reinventing the wheel every time",
   "main": "dist/CustomEventTarget.js",
   "types": "dist/CustomEventTarget.d.ts",
