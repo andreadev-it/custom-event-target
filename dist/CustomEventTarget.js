@@ -13,7 +13,10 @@ export class CustomEventTarget {
         if (!this.listeners.has(event))
             return;
         let listeners = this.listeners.get(event);
-        listeners = listeners.splice(listeners.findIndex((x) => x === listener), 1);
+        let index = listeners.findIndex((x) => x === listener);
+        if (index >= 0) {
+            listeners.splice(index, 1);
+        }
         this.listeners.set(event, listeners);
     }
     /**
