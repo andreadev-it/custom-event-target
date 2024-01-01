@@ -1,9 +1,11 @@
 {
-  "name": "@andreadev/simple-event-system",
+  "name": "@andreadev/custom-event-target",
   "version": "1.0.0",
   "description": "A simple yet effective event system to avoid reinventing the wheel every time",
-  "main": "index.js",
+  "main": "dist/CustomEventTarget.js",
+  "types": "dist/CustomEventTarget.d.ts",
   "scripts": {
+    "build": "tsc --target esnext --outDir ./dist --declaration src/*.ts",
     "test": "node --import tsx --test **/*.test.ts"
   },
   "type": "module",
