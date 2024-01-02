@@ -5,6 +5,7 @@ export declare class CustomEventTarget {
     constructor();
     addListener(event: string, listener: Listener): void;
     removeListener(event: string, listener: Listener): void;
+    clearListeners(event: string): void;
     /**
      * Call all the listeners for a specific event in a synchronous way.
      * If an async listener is found, it gets awaited before continuing.

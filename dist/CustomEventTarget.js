@@ -19,6 +19,11 @@ export class CustomEventTarget {
         }
         this.listeners.set(event, listeners);
     }
+    clearListeners(event) {
+        if (!this.listeners.has(event))
+            return;
+        this.listeners.set(event, []);
+    }
     /**
      * Call all the listeners for a specific event in a synchronous way.
      * If an async listener is found, it gets awaited before continuing.

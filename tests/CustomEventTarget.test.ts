@@ -131,4 +131,44 @@ describe("CustomEventTarget should", () => {
         assert.notEqual(count, 3);
         assert.equal(count, 1);
     });
+
+    test("correctly clear all listeners for a specific event", () => {
+        let target = new CustomEventTarget();
+        let count = 0;
+
+        target.addListener("load", () => { count++; });
+        target.addListener("load", () => { count++; });
+        target.addListener("load", () => { count++; });
+
+        target.fireEvent("load", {});
+
+        assert.equal(count, 3);
+
+        target.clearListeners("load");
+
+        target.fireEvent("load", {});
+
+        assert.equal(count, 3);
+    });
+
+    test("correctly clear all listeners", () => {
+        let target = new CustomEventTarget();
+        let count = 0;
+
+        target.addListener("first", () => { count++; });
+        target.addListener("first", () => { count++; });
+        target.addListener("second", () => { count++; });
+
+        target.fireEvent("first", {});
+        target.fireEvent("second", {});
+
+        assert.equal(count, 3);
+
+        target.clearAllListeners();
+
+        target.fireEvent("first", {});
+        target.fireEvent("second", {});
+
+        assert.equal(count, 3);
+    });
 });

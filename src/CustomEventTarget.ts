@@ -31,6 +31,22 @@ export class CustomEventTarget {
     }
 
     /**
+     * Clear all listeners for the specified event
+     */
+    clearListeners(event: string) {
+        if (!this.listeners.has(event)) return;
+
+        this.listeners.set(event, []);
+    }
+
+    /**
+     * Clear all listeners for all the events
+     */
+    clearAllListeners() {
+        this.listeners.clear();
+    }
+
+    /**
      * Call all the listeners for a specific event in a synchronous way.
      * If an async listener is found, it gets awaited before continuing.
      */
